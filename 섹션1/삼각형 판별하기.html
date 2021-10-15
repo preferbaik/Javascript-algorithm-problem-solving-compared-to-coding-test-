@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(a,b,c){
+              let max;
+              let other = 0;
+              if(a>b) 
+              {max=a; other+=b;}
+              else {
+                max=b; 
+                other+=a;}
+              if(c>max) {
+                other+=max;
+                max=c;} 
+              if(max > other){
+                return "No";
+              }else{
+                return "YES";
+              }
+            }
+            console.log(solution(6,7,11));
+            console.log(solution(13,33,17));
+        </script>
+    </body>
+</html>
