@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+              let min =2312321;
+              let hol = 0;
+              for(var a of arr){
+                if(a%2==1){
+                  hol+=a;
+                  if(a<min) min=a;
+              }
+            }
+            return {"total" : hol, "min" : min}
+          }
+            arr=[12,77,38,41,53,92,85];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
