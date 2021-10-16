@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(a, arr){
+              let cnt=0;
+              for(var num of arr){
+                if(String(num)[1]==a){
+                  cnt+=1;
+                }
+              };
+              return cnt;
+            }
+            arr=[25,23,11,47,53,17,33];
+            i = 3;
+            console.log(solution(i,arr));
+            arr2=[12,20,54,30,87,91,30]
+            j = 0;
+            console.log(solution(j,arr2));
+        </script>
+    </body>
+</html>
