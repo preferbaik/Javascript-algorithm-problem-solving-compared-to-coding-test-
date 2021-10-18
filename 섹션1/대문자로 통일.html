@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+              var answer = '';
+              for (var i=0; i<arr.length; i++){
+                var patt = /[a-z]/g;
+                if (patt.test(arr[i])) answer+=arr[i].toUpperCase();
+                else if(!patt.test(arr[i])) answer+=arr[i];
+              }
+              return answer;
+            }
+            arr="ItisTimeToStudy";
+            console.log(solution(arr));
+
+            function solution2(arr){
+              let answer = "";
+              for(let x of arg){
+                let num=x.charCodeAt();
+                if(num>=97 && num<=122) answer+=String.fromCharCode(num-32);
+                else answer+=x;
+              }
+              return answer;
+            }
+            arr="ItisTimeToStudy";
+            console.log(solution(arr));
+
+        </script>
+    </body>
+</html>

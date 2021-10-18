@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            // g : 전체 모든 문자열을 변경 global i : 영문 대소문자를 무시, 모두 일치하는 패턴 검색 ignore
+            function solution(arr){
+            var result = arr.replace( /A/gi, '#');
+            return result;
+            }
+            arr="BANANA";
+            console.log(solution(arr));
+            
+            function solution2(arr){
+            let answer="";
+                for(let x of arr){
+                    if(x=='A') answer+='#';
+                    else answer+=x;
+                }
+                return answer;
+            }
+            arr="BANANA";
+            console.log(solution2(arr));
+
+
+        </script>
+    </body>
+</html>
