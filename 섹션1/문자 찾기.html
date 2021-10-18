@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr, a){
+              let cnt=0;
+              for(var x of arr){
+                if(x==a) cnt+=1;
+              }
+              return cnt;
+            }
+            
+            arr="COMPUTERPROGRAMMING";
+            console.log(solution(arr, "R"));
+
+            function solution2(arg, a){
+            var str = /R/gi;
+            var result = arg.match(patt1).length;
+            return result;
+            }
+
+            arr="COMPUTERPROGRAMMING";
+            console.log(solution2(arr, "R"));
+
+        </script>
+    </body>
+</html>
