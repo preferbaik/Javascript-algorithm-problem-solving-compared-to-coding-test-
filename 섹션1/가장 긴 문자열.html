@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(args){
+              const patt = /[a-z]/g
+              let max = 0;
+              let answer = "";
+              for(var x of args){
+                if(max<x.match(patt).length){
+                  max=x.match(patt).length;
+                  answer=x;
+                } 
+              }
+              return answer;
+            }
+            arr=["teacher","time","student","beautiful","good"];
+            console.log(solution(arr));
+
+            function solution(s){  
+                let answer="", max=Number.MIN_SAFE_INTEGER;
+                for(let x of s){
+                    if(x.length>max){
+                        max=x.length;
+                        answer=x;
+                    }
+                }
+                return answer;
+            }
+            let str=["teacher", "time", "student", "beautiful", "good"];
+            console.log(solution(str));
+        </script>
+    </body>
+</html>

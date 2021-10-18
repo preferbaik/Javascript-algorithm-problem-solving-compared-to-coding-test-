@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+              var patt = /[A-Z]/g;
+              return arr.match(patt).length;
+            }
+            arr="KoreaTimeGood";
+            console.log(solution(arr));
+
+            function solution2(arr){
+              let cnt=0;
+              for(var a of arr){
+                if(a === a.toUpperCase()) cnt+=1
+              }
+              return cnt;
+            }
+            arr="KoreaTimeGood";
+            console.log(solution2(arr));
+        </script>
+    </body>
+</html>
