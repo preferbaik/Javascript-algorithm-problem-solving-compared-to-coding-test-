@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(a){
+              var total = a[0], score = 1;
+              for (var i=1; i<a.length; i++){
+                if(a[i-1]==1 && a[i] ==1) score++, total+=score;
+                else total+=a[i], score=1;
+                // let answer=0, cnt=0;
+                // for(let x of arr){
+                //     if(x===1){
+                //         cnt++;
+                //         answer+=cnt;
+                //     }
+                //     else cnt=0;
+                // }     
+              }
+              return total;
+            }
+            arr=[1,0,1,1,1,0,0,1,1,0];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>

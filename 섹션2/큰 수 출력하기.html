@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(nums){
+              // var answer = [nums[0]];
+              // for(var i=0; i<nums.length; i++){
+              //   if(nums[i]>nums[i-1]) answer.push(nums[i])
+              // }
+              //return answer;
+
+              let answers = nums.filter((v,i)=>{
+                if(v>nums[i-1]) return v;
+              })
+              answers.unshift(nums[0]);
+              return answers;
+            }
+            arr=[7, 3, 9, 5, 6, 12];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
