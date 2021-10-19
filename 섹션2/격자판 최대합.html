@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+            var hang =0, yul=0;
+            var max2 = -321;
+            for (var i=0; i<5; i++){
+              hang=yul=d=0;
+              for(var j=0; j<5; j++){
+                hang+=a[i][j];
+                yul+=a[j][i];
+              }
+              max2 = Math.max(max2, hang, yul);
+            } 
+            var d=0, yd=0;
+            for(var i=0; i<5; i++){
+              d+=a[i][i]
+              yd+=a[0+i][4-i]
+            }
+            max1 = Math.max(d, yd);
+
+            return Math.max(max2, max1);
+            }
+
+            var a =[
+              [10,13, 10, 12, 15],
+              [12, 39 ,30, 23, 11],
+              [11, 25, 50, 53, 15 ],
+              [19, 27, 29, 37, 27],
+              [19, 13, 30, 13, 19]
+            ]
+            console.log(solution(a));
+
+
+
+        </script>
+    </body>
+</html>
