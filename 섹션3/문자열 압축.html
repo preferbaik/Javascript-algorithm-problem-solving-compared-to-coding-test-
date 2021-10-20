@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(str){
+              var cnt = 1;
+              var standard = str[0];
+              var answer = str[0];
+              for(var i=1; i<str.length; i++){
+                if(standard!==str[i]) {
+                  if(cnt==1) answer+="";
+                  else answer+=cnt.toString();
+                  standard=str[i];
+                  answer+=str[i];
+                  cnt=1;
+                }else cnt+=1;
+              }
+              return answer;
+            }
+            var str = "KKHSSSSSSSE";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>

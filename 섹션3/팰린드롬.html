@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+            var reverse = arr.split("").reverse().join("");
+            const regexp = new RegExp(arr.replace(/[\W,\d]/g,""), "gi");
+            
+            if(regexp.test(reverse.replace(/[\W,\d]/g,""))) return "Yes";
+            else return "No";
+            }
+            var arr="found7, time: study; Yduts; emit, 7Dnuof";
+            console.log(solution(arr));
+
+        </script>
+    </body>
+</html>
