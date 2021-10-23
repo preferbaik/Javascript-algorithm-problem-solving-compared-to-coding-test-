@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr, t){
+              var max=index=0;
+              for (var i=0; i<arr.length; i++){
+                if (arr[i][0]>max) max=arr[i][0], index=i;
+              }
+              arr[index][0]=arr[index][0]/2;
+
+
+              var cnt=total=0;
+              var max=-1231232
+              for (var i=0; i<arr.length; i++){
+                cnt=total=0;
+                total+=arr[i][0]+arr[i][1];
+                cnt++
+                for(var j=i+1; j<arr.length; j++){
+                  if(total<=t) total+=arr[j][0]+arr[j][1], cnt++;
+                  if(total==t) max=Math.max(max, cnt) ;
+                }
+              }
+              return max;
+            }
+            var arr=[[6, 6], [2, 2], [4, 3], [4, 5], [10, 3]];
+            var total = 28;
+            console.log(solution(arr, total));
+
+
+
+
+
+        </script>
+    </body>
+</html>
