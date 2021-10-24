@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+              var sH = new Map();
+              for(var s of str){
+                if(sH.has(s)) sH.set(s, sH.get(s)+1);
+                else sH.set(s,1);
+                }
+              var max=0;
+              var answer;
+              for (var [k, v] of sH){
+                if(v>max) max=v, answer=k;
+              }
+              return answer;
+              }
+            
+            let str="BACBACCACCBDEDE";
+            console.log(solution(str));
+
+        </script>
+    </body>
+</html>
