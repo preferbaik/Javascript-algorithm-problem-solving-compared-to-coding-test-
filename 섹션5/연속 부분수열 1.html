@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr,k){
+              var standard=total=ps=cnt=0;
+              var m = arr.length
+              while(standard<m && ps<m){
+                total+=arr[ps];
+                if(total==k) standard++, cnt++,  ps=standard, total=0;
+                else if(total>k) standard++, ps=standard, total=0;
+                else ps++;
+                }
+              return cnt;
+            }
+            var arr=[1,2,1,3,1,1,1,2];
+            var k = 6;
+            console.log(solution(arr,k));
+            
+            let answer=0, lt=0, sum=0;
+            for(let rt=0; rt<arr.length; rt++){
+                sum+=arr[rt];
+                if(sum===k) answer++;
+                while(sum>=k){
+                    sum-=arr[lt++];
+                    if(sum===k) answer++;       
+                }
+              }
+            console.log(answer);
+        </script>
+    </body>
+</html>
