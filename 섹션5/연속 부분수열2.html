@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr,m){
+              let answer=0, sum=0, lt=0;
+              for(let rt=0; rt<arr.length; rt++){
+                  sum+=arr[rt];
+                  while(sum>m){
+                      sum-=arr[lt++];
+                  }
+                  answer+=(rt-lt+1);
+                }
+              return answer;   
+            }
+            let a= [1, 3, 1, 2, 3];
+            let k = 5;
+            console.log(solution(a,k));
+
+            var total=p=standard=cnt=0;
+            while(standard<a.length){
+              total+=a[p++];
+              if(total<=k) cnt++;
+              if(total>k) standard++, p=standard, total=0;
+              if(p==k-1) {
+                total+=a[p];
+                if(total<=k) cnt++, standard++, total=0;
+
+              }
+              if(standard==k-1) {
+                total+=a[standard];
+                if(total<=k) cnt++, standard++;
+              }
+            }
+            console.log(cnt);
+
+        </script>
+    </body>
+</html>
