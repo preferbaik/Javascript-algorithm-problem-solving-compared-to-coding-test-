@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr, k){
+              var lt=total=max=0;
+              for(var rt=k-1; rt<arr.length; rt++){
+              total+=arr[lt++]+arr[lt]+arr[rt];
+              if(total>max) max = total;
+              total=0;
+              }
+              return max;
+            }
+            let arr=[12, 15, 11, 20, 25, 10, 20, 19, 13, 15];
+            let k=3;
+            console.log(solution(arr, k));
+        </script>
+    </body>
+</html>
