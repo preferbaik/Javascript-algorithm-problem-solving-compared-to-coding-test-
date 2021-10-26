@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(a){
+              var list=[a[0]];
+              var index = list.length-1;
+              for(var i=1; i<a.length; i++){
+                if(list[index]=="(" && a[i]==")") list.pop();
+                else list.push(a[i]);
+              }
+              if(list.length==0) return "YES";
+              return "NO"
+            }
+            // let a="(()(()))(()";
+            let a="(())";
+            console.log(solution(a));
+
+
+            // let answer="YES";
+            // stack=[];
+            // for(let x of s){
+            //     if(x==='(') stack.push(x);
+            //     else{
+            //         if(stack.length===0) return "NO";
+            //         stack.pop();
+            //     }
+            //   }
+            //   if(stack.length>0) return "NO";  
+            //   return answer;
+        </script>
+    </body>
+</html>
