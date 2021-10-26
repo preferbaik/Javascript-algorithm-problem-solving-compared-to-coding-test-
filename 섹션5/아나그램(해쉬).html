@@ -7,29 +7,20 @@
         <script>
             function solution(a,b){
               var sH = new Map();
-              var sI = new Map();
               for(var h of a){
                   if(sH.has(h)) sH.set(h, sH.get(h)+1);
                   else sH.set(h,1);
                   }
               
-              for(var i of b){
-                  if(sI.has(i)) sI.set(i, sI.get(i)+1);
-                  else sI.set(i,1);
-                  }
-
-              for (var [k, v] of sH){
-                if(!sI.has(k) || sI.get(k)!=v) return "NO";
+              for (var k of b){
+                if(!sH.has(k)|| sH.get(k)==0) return "NO";
+                sH.set(k, sH.get(k)-1);
                 }
               return "YES";
             }
             let a="AbaAeCe";
             let b="baeeACF";            
             console.log(solution(a,b));
-
-
-
-
         </script>
     </body>
 </html>
