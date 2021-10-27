@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(str){
+                var stack = [];
+                var mid='';
+                for(var s of str){
+                    const regexp = new RegExp("[0-9]", "g");
+                    if(!regexp.test(s)){
+                        var rt=stack.pop();
+                        var lt=stack.pop();
+                        if(s=='+') stack.push((+lt)+(+rt));
+                        else if(s=='-') stack.push((+lt)-(+rt));
+                        else if(s=='*') stack.push((+lt)*(+rt));
+                        else if(s=='/') stack.push((+lt)/(+rt));
+                        }
+                    else stack.push(s);
+                    }
+                    return stack[0];
+                }
+            let str="352+*9-";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
