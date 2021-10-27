@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(a,b){
+              var answer;
+              var stack = Array.from({length:a}, (v,i)=>(i+1));
+              while(stack.length){
+                for(var i=0; i<b; i++){
+                  if(i==b-1) stack.shift();
+                  else stack.push(stack.shift())
+                }
+                if(stack.length==1) answer=stack[0];
+              }
+              return answer;
+            }
+            var a=8;
+            var b=3;
+            console.log(solution(8, 3));
+        </script>
+    </body>
+</html>
