@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(a,b){
+              var max=-231312;
+              for (var x of a){
+                if (b.indexOf(x)>max) max=b.indexOf(x);
+                else return "NO";
+              }
+              return "YES"
+            }
+            let a="CBA";
+            let b="CADBGE";
+            console.log(solution(a,b));
+
+
+            function solution2(need, plan){
+                let answer="YES";
+                let queue=need.split('');
+                for(let x of plan){
+                    if(queue.includes(x)){
+                        if(x!==queue.shift()) return "NO";
+                    }
+                }
+                if(queue.length>0) return "NO";  
+                return answer;
+            }
+
+            let c="CBA";
+            let d="CBDAGE";
+            console.log(solution2(c, d));
+
+        </script>
+    </body>
+</html>
