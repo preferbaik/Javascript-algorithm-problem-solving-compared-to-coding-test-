@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr,a){
+                var list=[];
+                var index=0;
+                for(var x of arr){
+                if(!list.includes(x)){
+                    list.unshift(x)
+                }
+                else{
+                    index=list.indexOf(x);
+                    while(index!=0){
+                        [list[index], list[index-1]] = [list[index-1], list[index]];
+                        index--
+                        }
+                    }
+                    if(list.length>a) list.pop()
+                }
+                return list
+            }
+            let arr=[1, 2, 3, 2, 6, 2, 3, 5, 7];
+            console.log(solution(arr, 5));
+        </script>
+    </body>
+</html>
