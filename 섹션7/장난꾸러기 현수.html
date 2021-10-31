@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+              let sortArr=arr.slice();
+              let answer=[];
+              sortArr.sort((a, b)=>a-b);
+              for(let i=0; i<arr.length; i++){
+                if(arr[i]!==sortArr[i]) answer.push(i+1);
+                  }
+              return answer;
+            }
+
+            let arr=[120, 125, 152, 130, 135, 135, 143, 127, 160];
+
+            console.log(solution(arr));
+            // var h=152;
+            // var hh=127
+            // arr.sort((a,b)=>(a-b));
+            // var index1=arr.indexOf(h);
+            // var index2=arr.indexOf(hh);
+            // [arr[index1], arr[index2]]=[arr[index2], arr[index1]];
+            // console.log(arr);
+        </script>
+    </body>
+</html>

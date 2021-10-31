@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+              var cnt=max=finish=0;
+              arr.forEach((x,i)=>{
+                cnt=1;
+                finish=x[1]
+                for(var j=i+1; j<arr.length; j++) if(arr[j][0]==finish) finish=arr[j][1], cnt++;
+                if(cnt>max) max=cnt;
+              })
+              return max;
+            }
+            let arr=[[1, 4], [2, 3], [3, 5], [4, 6], [5, 7]];
+            console.log(solution(arr));
+
+            var answer=0;
+            arr.sort((a, b)=>{
+                    if(a[1]===b[1]) return a[0]-b[0];
+                    else return a[1]-b[1];
+                })
+            let et=0;
+                for(let x of arr){
+                    if(x[0]>=et){
+                        answer++;
+                        et=x[1];
+                    }
+                }
+            console.log(answer);
+        </script>
+    </body>
+</html>
