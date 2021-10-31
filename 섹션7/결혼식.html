@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+              let T_line=[];
+                for(let x of arr){
+                    T_line.push([x[0], 's']);
+                    T_line.push([x[1], 'e']);
+                }
+              T_line.sort((a, b)=>{
+                  if(a[0]===b[0]) return a[1].charCodeAt()-b[1].charCodeAt();
+                  else return a[0]-b[0];
+              });
+              var cnt=answer=0;
+              for(let x of T_line){
+                  if(x[1]==='s') cnt++;
+                  else cnt--;
+                  answer=Math.max(answer, cnt);
+              }
+              return answer;
+            }
+            let arr=[[14, 18], [12, 15], [15, 20], [20, 30], [5, 14]];
+            console.log(solution(arr));
+
+            var answer=max=0;
+            arr.forEach(x=>{
+              var start=x[0];
+              var finish=x[1];
+              answer=1;
+              for(var j=0; j<arr.length; j++){
+                if(arr[j][0]>start && arr[j][0]<finish) answer++;
+              }
+              max=Math.max(answer,max);
+            })
+            console.log(max);
+
+
+        </script>
+    </body>
+</html>
