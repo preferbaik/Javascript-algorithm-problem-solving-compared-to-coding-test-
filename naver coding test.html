@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr,k){
+
+              var sH = new Map();
+              for(var i=0; i<arr.length; i++){
+                  var a =arr[i].split(' ');
+                  var sH2 = new Set(a);
+                  var result = [...sH2];
+                  for(var x of result){
+                      if(sH.has(x)) sH.set(x, sH.get(x)+1);
+                      else sH.set(x,1);
+                  }
+                }
+              var cnt=0;
+              var num = k;
+              for(var [k,v] of sH){
+                if(k!=undefined){
+                  if(v<num+1) cnt+=v;
+                  else cnt+=num
+                }
+              }
+              return cnt;
+            }
+            var arr = ["JAY", "JAY ELLE JAY MAY", "MAY ELLE MAY", "ELLE MAY", "ELLE ELLE ELLE", "MAY"];
+            console.log(solution(arr,3));
+        </script>
+    </body>
+</html>
