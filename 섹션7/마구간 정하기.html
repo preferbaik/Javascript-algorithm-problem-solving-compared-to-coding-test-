@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+              arr.sort((a,b)=>(a-b));
+              var lt=arr[0];
+              var rt=arr[arr.length-1];
+              var answer=0;
+              while(lt<=rt){
+                var mid=parseInt((lt+rt)/2);
+                if(count(arr, mid)['cnt']>=k) answer=mid,lt=mid+1;
+                else rt=mid-1;
+              }
+              return answer;
+            }
+            function count(arr, mid){
+              var standard=arr[0];
+              var cnt=1;
+              for(var x of arr){
+                if(x-standard>=mid) standard=x, cnt++;
+              }
+              return {"cnt":cnt,"mid":mid};
+            }
+            let arr=[1, 2, 8, 4, 9];
+            let k =3
+            // console.log(count(arr, 5)['cnt']);
+            console.log(solution(arr,k));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr,k){
+              var lt=Math.max(...arr);
+              var rt=arr.reduce((a, b)=>a+b, 0);
+              var cnt=total=mid=0;
+              var min=123;
+              while(lt<=rt){
+                mid=parseInt(lt+rt/2);
+                total=0;
+                cnt=0;
+                for(var a of arr){
+                  total+=a;
+                  if(total>=mid) cnt++, total=a;
+                }
+                if(cnt<k) rt=mid-1;
+                else if(cnt>k) lt=mid+1;
+                else break;
+              }
+              return mid;
+            }
+            let arr=[1, 2, 3, 4, 5, 6, 7, 8, 9];
+            let k=3;
+            console.log(solution(arr,k));
+
+
+          function count(songs, capacity){
+                let cnt=1, sum=0;
+                for(let x of songs){
+                    if(sum+x > capacity){
+                        cnt++;
+                        sum=x;
+                    }
+                    else sum+=x;
+                }
+                return cnt;
+            }
+            
+            function solution1(m, songs){
+                let answer;
+                let lt=Math.max(...songs);
+                let rt=songs.reduce((a, b)=>a+b, 0);
+                while(lt<=rt){
+                    let mid=parseInt((lt+rt)/2);
+                    if(count(songs, mid)<=m){
+                        answer=mid;
+                        rt=mid-1;
+                    }
+                    else{
+                        lt=mid+1;
+                    }
+                } 
+                return answer;
+            }
+
+            
+
+        </script>
+    </body>
+</html>
