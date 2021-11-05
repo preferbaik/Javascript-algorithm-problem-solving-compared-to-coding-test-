@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+              var answer="NO";
+              var half=arr.reduce((a, b)=>a+b, 0)/2;
+              var n=arr.length;
+              function DFS(L, sum){
+                if(L==n){
+                  if(sum==half){
+                    answer="YES"
+                    return;
+                  }
+                }
+                else{
+                  DFS(L+1, sum+arr[L]);
+                  DFS(L+1, sum);
+                }
+              }
+              DFS(0,0);
+              return answer;
+            }
+            let arr=[1, 3, 5, 6, 7, 10];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
