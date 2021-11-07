@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(n, m){
+              var answer=[];
+              var cnt=0;
+              function DFS(L,k){
+                if(k==4 || L==4){
+                  cnt+=3;
+                  return;
+                }
+                if(L==4) return;
+                else{
+                  console.log(L,k)
+                  DFS(L, k+1);
+                  DFS(L+1,1);
+                }
+              }
+              DFS(1,1);
+              return cnt;
+            }
+
+            console.log(solution(3, 2));
+        </script>
+    </body>
+</html>
