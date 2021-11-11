@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(a){
+              var answer = 1;
+              function DFS(L,n){
+                if(L==1) answer = n; 
+                else DFS(L-1,n*L);
+              }
+              DFS(5,1);
+              return answer;
+            }
+            console.log(solution(5));
+        </script>
+    </body>
+</html>
