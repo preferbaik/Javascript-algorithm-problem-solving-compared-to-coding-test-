@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(h,c){
+              let queue = [];
+              let answer = 0;
+              queue.push(h);
+              let ch=Array.from({length:10001}, ()=>0);
+              ch[c]=1;
+              let dis=Array.from({length:10001}, ()=>0);
+              while(queue.length){
+                let v = queue.shift();
+                for(let nv of [v+1, v-1, v+5]){
+                  if(nv===c) return dis[v]+1;
+                  if(nv>0 && nv<=10000 && ch[nv]===0){
+                    ch[nv]=1;
+                    queue.push(nv);
+                    dis[nv]=dis[v]+1;
+                  }
+                }
+              }
+              return answer;
+            }
+            console.log(solution(5,14));
+        </script>
+    </body>
+</html>
