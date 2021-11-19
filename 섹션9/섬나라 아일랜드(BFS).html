@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr,n){
+              let queue = [];
+              let cnt = 0;
+              let dx=[-1, -1, 0, 1, 1, 1, 0, -1];
+              let dy=[0, 1, 1, 1, 0, -1, -1, -1];
+
+              for(let i=0; i<n; i++){
+                for(let j=0; j<n; j++){
+                  if(arr[i][j]===1){
+                    queue.push(i);
+                    queue.push(j);
+
+                    while(queue.length){
+                      let x = queue.shift();
+                      let y = queue.shift();
+                      arr[x][y]=0;
+                      for(let i=0; i<dx.length; i++){
+                        let xx = x+dx[i];
+                        let yy = y+dy[i];
+                        if(xx>=0 && xx<n && yy>=0 && yy<n && arr[xx][yy]===1){
+                            queue.push(xx);
+                            queue.push(yy);
+                        }
+                      }
+                    }
+
+                    cnt++;
+                  }
+                }
+              }
+              return cnt;
+            }
+            let arr=[[1, 1, 0, 0, 0, 1, 0], 
+                     [0, 1, 1, 0, 1, 1, 0],
+                     [0, 1, 0, 0, 0, 0, 0],
+                     [0, 0, 0, 1, 0, 1, 1],
+                     [1, 1, 0, 1, 1, 0, 0],
+                     [1, 0, 0, 0, 1, 0, 0],
+                     [1, 0, 1, 0, 1, 0, 0]];            
+            console.log(solution(arr, 7));
+        </script>
+    </body>
+</html>

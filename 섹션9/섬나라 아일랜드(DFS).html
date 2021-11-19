@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr,n){
+              let dx=[-1, -1, 0, 1, 1, 1, 0, -1];
+              let dy=[0, 1, 1, 1, 0, -1, -1, -1];
+              let cnt = 0;
+              function DFS(x,y){
+                  for(let i=0; i<dx.length; i++){
+                    let xx = x+dx[i];
+                    let yy = y+dy[i];
+                    if(xx>=0 && xx<7 && yy>=0 && yy<7 && arr[xx][yy]===1){
+                      arr[xx][yy]=0;
+                      DFS(xx,yy);
+                    }
+                  }
+              }
+              for(let i=0; i<n; i++){
+                for(let j=0; j<n; j++){
+                  if(arr[i][j]===1){
+                    arr[i][j]=0;
+                    cnt++;
+                    DFS(i, j)
+                  }
+                }
+              }
+              return cnt;
+            }
+            let arr=[[1, 1, 0, 0, 0, 1, 0], 
+                     [0, 1, 1, 0, 1, 1, 0],
+                     [0, 1, 0, 0, 0, 0, 0],
+                     [0, 0, 0, 1, 0, 1, 1],
+                     [1, 1, 0, 1, 1, 0, 0],
+                     [1, 0, 0, 0, 1, 0, 0],
+                     [1, 0, 1, 0, 1, 0, 0]];            
+            console.log(solution(arr, 7));
+        </script>
+    </body>
+</html>
