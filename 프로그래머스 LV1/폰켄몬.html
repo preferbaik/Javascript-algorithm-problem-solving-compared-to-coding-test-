@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr) {
+                var sH = new Map();
+                for(var h of arr){  
+                  if(sH.has(h)) sH.set(h, sH.get(h)+1);
+                  else sH.set(h,1);
+                }
+                if(sH.size>arr.length/2) return arr.length/2;
+                else return sH.size;
+            }
+            let arr=[];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
