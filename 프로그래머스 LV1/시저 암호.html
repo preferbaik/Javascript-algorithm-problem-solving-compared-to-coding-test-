@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s, n) {
+              let answer = '';
+              for (let x of s.split('')){
+                let result = x.charCodeAt();
+                if(result>=97 && result<=122){
+                  if(result+n>122){
+                    result=96+(result+n-122)
+                  }
+                  else{
+                    result=result+n;
+                  }
+                }
+                if(result>=65 && result<=90){
+                  if(result+n>90){
+                    result=64+(result+n-90)
+                  }
+                  else{
+                    result=result+n;
+                  }
+                }
+                answer+=String.fromCharCode(result);
+              }
+              return answer;
+            }
+            let s = "aBz";
+            let n = 4;
+            console.log(solution(s,n))
+        </script>
+    </body>
+</html>
