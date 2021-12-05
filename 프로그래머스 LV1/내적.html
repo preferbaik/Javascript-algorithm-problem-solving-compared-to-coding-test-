@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+            function solution(a, b) {
+              var answer = 0;
+              for (var i=0; i<a.length; i++) {
+                for (var j=0; j<b.length; j++){
+                  if(i===j) {
+                    answer+=(a[i]*b[j]);
+                    break;
+                  } 
+                }
+              }
+              return answer;
+            }
+            let arr=[];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
