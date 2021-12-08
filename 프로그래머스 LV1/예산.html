@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(d, budget) {
+                var count = 0;
+                var sum = 0;
+                d.sort((a,b) => a-b);
+
+                for(var i=0; i < d.length; i++) {
+                    sum += d[i];
+                    count = d.length;
+                    if(sum > budget) {
+                        count = i;
+                        break;
+                    }
+                }
+                return count;
+            }
+            let arr=[];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
