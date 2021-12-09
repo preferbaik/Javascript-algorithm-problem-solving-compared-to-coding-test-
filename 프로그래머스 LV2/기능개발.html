@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function solution(p, s) {
+    let answer = [];
+    let cnt=0;
+    let days=1
+    while(p.length){
+      if(p[0]+(s[0]*days)>=100){
+        p.shift();
+        s.shift();
+        cnt++;
+      }
+      else{
+        if(cnt>0){
+          answer.push(cnt);
+        }
+        days++;
+        cnt = 0;
+      }
+    }
+      answer.push(cnt);
+    return answer;
+  }
+  let p = [93, 30, 55];
+  let s = [1, 30, 5];
+  console.log(solution(p,s));
+  </script>
+</body>
+</html>
