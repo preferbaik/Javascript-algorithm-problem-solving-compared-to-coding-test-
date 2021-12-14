@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  function solution(n, arr1, arr2) {
+    let arr = Array.from(Array(n), ()=>Array(n).fill("#"));
+    for(let i=0; i<n; i++){
+      let a1 = arr1.shift().toString(2).split('');
+      let a2 = arr2.shift().toString(2).split('');
+      if(a1.length<=n){
+        while(a1.length<n){
+          a1.unshift("0")
+        }
+      }
+      if(a2.length<=n){
+        while(a2.length<n){
+          a2.unshift("0")
+        }
+      }
+      arr1.push(a1)
+      arr2.push(a2)
+    }
+
+    for(let i=0; i<n; i++){
+      for(let j=0; j<n; j++){
+        if(arr1[i][j]==='0' && arr2[i][j]==='0'){
+          arr[i][j]=' ';
+        }
+      }
+      arr[i] = arr[i].join("");
+    }
+    return arr;
+}
+  </script>
+</body>
+</html>
