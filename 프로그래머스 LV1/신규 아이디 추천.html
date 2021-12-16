@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function solution(new_id) {    
+    const answer = new_id
+        .toLowerCase()
+        .replace(/[^\w-_.]/g, '')
+        .replace(/\.{2,}/g, '.') //최소 2개이상의 점
+        .replace(/^\.|\.$/g, '')
+        .replace(/^$/, 'a')
+        .slice(0, 15).replace(/\.$/, '');
+    const len = answer.length;
+    return len > 2 ? answer : answer+answer[answer.length-1].repeat(3 - len);
+}
+  </script>
+</body>
+</html>
