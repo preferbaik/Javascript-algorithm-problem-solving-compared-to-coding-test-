@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function solution(x, n) {
+    let answer = new Array(n).fill(x);
+    let standard = x;
+    for(let i=1; i<answer.length; i++){
+      standard+=x;
+      answer[i]=standard;
+    }    
+    return answer;
+}
+  </script>
+</body>
+</html>
