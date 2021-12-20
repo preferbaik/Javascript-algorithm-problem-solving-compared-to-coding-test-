@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function solution(priorities, location) {
+    const arr=priorities.map((el,i)=>[el,i]);
+    let cnt=0;
+    while(arr.length){
+        const cur=arr.shift();
+        if(arr.some(item=>item[0]>cur[0])){
+            arr.push(cur);     
+        }else {
+            cnt++;
+            if(cur[1]===location)return cnt;
+        }
+    }
+}
+  </script>
+</body>
+</html>
