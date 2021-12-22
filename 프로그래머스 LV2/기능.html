@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function solution(clothes) {
+      let m = new Map();
+      for (let i=0; i<clothes.length; i++){
+        if(m.has(clothes[i][1])) m.set(clothes[i][1],m.get(clothes[i][1])+1);
+        else m.set(clothes[i][1],2);
+      }
+      let answer=1;
+      for(let v of m.values()){
+        answer*=v
+      }
+      return answer-1
+    }
+  </script>
+</body>
+</html>
