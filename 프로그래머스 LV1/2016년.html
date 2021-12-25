@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function solution(a, b) {
+    var answer = '';
+    var date = new Date(`2016,${a},${b}`);
+    var day= date.toString().split(' ')
+    answer = day[0].toUpperCase();
+    return answer;
+}
+  </script>
+</body>
+</html>
