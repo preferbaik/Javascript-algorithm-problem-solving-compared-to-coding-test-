@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function solution(s) {
+    var answer = '';
+    if(s.length % 2 ===0){
+        answer = answer.concat(s[s.length/2 -1]);
+        answer = answer.concat(s[s.length/2]);
+    }else{
+        answer = answer.concat(s[Math.floor(s.length/2)]);
+    }
+    return answer;
+}
+  </script>
+</body>
+</html>
