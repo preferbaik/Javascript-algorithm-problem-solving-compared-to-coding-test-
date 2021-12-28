@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function solution(arr){
+  let min = Math.min(...arr);
+  let idx = arr.indexOf(min);
+  arr.splice(idx,1);
+  return arr.length ? arr : [-1];
+}
+  </script>
+</body>
+</html>
