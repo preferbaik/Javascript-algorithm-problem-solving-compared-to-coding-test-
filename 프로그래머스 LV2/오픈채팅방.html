@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let arr  =["Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"];
+
+
+    function solution(arr) {
+      let map = new Map();
+      for(let i=0; i<arr.length; i++){
+        let a = arr[i].split(' ');
+        if(a.length===3){
+          map.set(a[1],a[2])
+        }
+      }
+      let answer = [];
+      for(let i=0; i<arr.length; i++){
+        let a = arr[i].split(' ');
+        if(a[0]==="Enter") answer.push(`${map.get(a[1])}님이 들어왔습니다.`)
+        if(a[0]==="Leave") answer.push(`${map.get(a[1])}님이 나갔습니다.`)
+      }
+      return answer;
+    }
+    console.log(solution(arr))
+  </script>
+</body>
+</html>
