@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+        function solution(skill, skill_trees) {
+        let answer = 0;
+        for (let sk of skill_trees) {
+            let isTrue = true
+            let skills = skill.split('')
+            for (let s of sk.split('')) {
+                if (skills.includes(s)) {
+                    if (skills[0] === s) {
+                        skills.shift()
+                    } else {
+                        isTrue = false
+                        break
+                    }
+                }
+            }
+            if (isTrue) answer++
+        }
+        return answer;
+    }
+  </script>
+</body>
+</html>
