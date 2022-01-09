@@ -5,34 +5,35 @@
 </head>
 <body>
   <script>
-    let answer = []
-    let land = [[1,2,3,5],[5,6,7,8],[4,3,2,1]];
-    for(let i=0; i<land.length; i++){
+    function solution(land){
+      let answer = []
       
-      let arr = Array.from(Array(land.length), ()=>Array(land[0].length).fill(0));
-      let L=1;
-      let max=0;
-      let total=0
-      while(L<land.length){
+      for(let i=0; i<land[0].length; i++){
+
+        let arr = Array.from(Array(land.length), ()=>Array(land[0].length).fill(0));
+        let L=1;
+        let max=0;
+        let total=land[0][i];
+        let std = 0;
         arr[L][i]=1;
-        total=arr[0][i]+max;
-        
-        for(let j=0; j<land[i].length; j++){
-          
-          if(arr[L][j]===0){
-            
-            if(total+arr[L][j]>max){
-              max=total+arr[L][j]
+        while(L<land.length){
+          arr[L][std]=1;
+          for(let j=0; j<land[0].length; j++){
+            if(arr[L][j]===0){
+              if(total+land[L][j]>max){
+                max=total+land[L][j];
+                std=j;
+              }
             }
-              
           }
-            
+          total+=land[L][std];
+          L++;
         }
-        L++
+        answer.push(total);
       }
-      answer.push(total);
+      return Math.max(...answer)
+
     }
-console.log(answer);
   </script>
 </body>
 </html>
