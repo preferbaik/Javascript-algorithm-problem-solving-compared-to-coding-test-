@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function solution(s){
+  let len = s.length;
+  let answer = true;
+	if(len === 4 || len === 6){
+    let ch = s.split('').every(a=>!isNaN(a));
+    if(ch) return answer;
+  }
+  answer=false;
+  return answer;
+}
+  </script>
+</body>
+</html>
